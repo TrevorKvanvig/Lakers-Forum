@@ -18,6 +18,8 @@ const PlayerGrid = () => {
     Maxwell Lewis: NaN
   */
   const allLakerPlayerIDs = [237, 117, 38017697, 17553995, 666609, 383, 666860, 405, 457, 1603383, 666626]
+
+  // hashmap of player ids to pass into Player Template
   const playerImgMap = {
     237: '/playerPictures/lJames.png',
     117: '/playerPictures/aDavis.png',
@@ -31,21 +33,27 @@ const PlayerGrid = () => {
     666626: '/playerPictures/jHayes.png',
     457: '/playerPictures/jVanderbilt.png'
   }
+  
+  // whenever page is rendered get all players from databse
   useEffect(() => {
     const getAllPlayers = async () => {
+      // receive all promises from api
       try {
         const fetchPromises = allLakerPlayerIDs.map(async (LakerID) => {
           const response = await fetch('https://www.balldontlie.io/api/v1/players/' + LakerID);
           return response.json();
         });
-  
+        
+        // gell all players from api
         const fetchedPlayers = await Promise.all(fetchPromises);
+        // make current state of site have all players
         addPlayer(fetchedPlayers);
       } catch (error) {
         console.error('Error fetching players:', error);
       }
     };
-  
+    
+    //cal function
     getAllPlayers();
     console.log(players);
   }, []);
