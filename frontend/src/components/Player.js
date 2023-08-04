@@ -1,9 +1,11 @@
 
-const Player = ({playerInfo}) => {
+const Player = ({playerInfo, img}) => {
   return (
     <div className="player-container">
-      <p>{playerInfo.first_name}</p>
-      <p>asdfsafd</p>
+      <img className="player-portrait" src={img} alt="Player Image" />
+      <p>{playerInfo.first_name} {playerInfo.last_name}</p>
+      
+      
     </div>
     
   );

@@ -1,8 +1,9 @@
 html, body {
-  background-color: rgb(136, 136, 136);
+  background-color: rgb(255, 255, 255);
   height: 99vh;
   padding: 0px;
   margin: 0px;
+
 }
 
 .lakers-grid {
@@ -12,8 +13,8 @@ html, body {
   grid-template-rows: 100px 90% ;
   height: 100vh;
   width: 100%;
-  overflow-y: hidden;
   margin: 0px;
+  
 }
 
 .heading {
@@ -25,11 +26,37 @@ html, body {
   background-color: purple;
 }
 
-.player-grid {
-  background-color: yellow;
+.team-container {
+  background-image: url('../public/LakersLogo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
   grid-column: span 2;
+  
+  padding: 20px 20px 0px 20px;
 }
 
 .player-container {
-  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+  height: 230px;
+  background-color: rgba(128, 128, 128, 0.48);
+  padding-bottom: 0px;
+}
+.player-container img {
+  margin-bottom: 0px;
+}
+
+
+.player-portrait {
+  width: 90%;
+  height: auto;
 }
